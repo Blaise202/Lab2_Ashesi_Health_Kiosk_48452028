@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class HealthKiosk{
   public static void main(String[] args){
@@ -63,8 +64,33 @@ public class HealthKiosk{
         double cosine = Math.cos(radians);
         sine = Math.round(sine * 1000.0) / 1000.0;
         cosine = Math.round(cosine * 1000.0) / 1000.0;
-        System.out.printf("Sin: "+ sine +" Cos: " + cosine);
+        System.out.println("Sin: "+ sine +" Cos: " + cosine);
       }
+    }
+
+    // Task 3
+
+    char randomChar = (char) ('A' + (int)(Math.random() * 26));
+    Random rand = new Random();
+    int min = 3;
+    int max = 9;
+    int random1 = rand.nextInt((max - min) + 1) + min;
+    int random2 = rand.nextInt((max - min) + 1) + min;
+    int random3 = rand.nextInt((max - min) + 1) + min;
+    int random4 = rand.nextInt((max - min) + 1) + min;
+    String studentID = randomChar + "" + random1 + "" + random2 + "" + random3 + "" + random4;
+    System.out.println("String ID = " + studentID);
+    if (studentID.length() != 5) {
+      System.out.println("Invalid: length must be 5");
+    } else if (!Character.isLetter(studentID.charAt(0))) {
+      System.out.println("Invalid: first char must be a letter");
+    } else if (!(Character.isDigit(studentID.charAt(1)) &&
+                  Character.isDigit(studentID.charAt(2)) &&
+                  Character.isDigit(studentID.charAt(3)) &&
+                  Character.isDigit(studentID.charAt(4)))) {
+      System.out.println("Invalid: last 4 must be digits");
+    } else {
+      System.out.println("ID OK");
     }
   }
 }

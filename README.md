@@ -2,12 +2,12 @@
 
 #### Name:
 
-> -- Blaise Izerimana
+Blaise Izerimana
 
 #### ID:
 
-> -- 48452028
+48452028
 
 #### Lab Number:
 
-> -- 2
+2

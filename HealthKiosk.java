@@ -110,5 +110,17 @@ public class HealthKiosk{
     String displayCode = shifted + lastTwo + "-" + roundedBMI;
     System.out.println("Display Code: " + displayCode);
 
+    // Task 5
+
+    System.out.print("Summary: ");
+    if(service_code == 'T'){
+      System.out.print("TRIAGE | ID=" + studentID + " | BMI=" + bmi + " | Code=" + displayCode);
+    }else if(service_code == 'P'){
+      System.out.print("PHARMACY | ID=" + studentID + " | Code=" + displayCode);
+    }else if(service_code == 'L'){
+      System.out.print("LAB | ID=" + studentID + " | Code=" + displayCode);
+    }else if(service_code == 'C'){
+      System.out.print("COUNSELING | ID=" + studentID + " | Code=" + displayCode);
+    }
   }
 }

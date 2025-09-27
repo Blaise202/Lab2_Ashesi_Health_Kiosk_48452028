@@ -30,6 +30,7 @@ public class HealthKiosk{
     // Task 2
 
     service_code = Character.toUpperCase(service_code);
+    double bmi = 0.0;
     if(service_code == 'T'){
       System.out.print("Please Enter the health metrics; [1: BMI, 2: Dosage round-up, 3: simple trig helper]: ");
       int metrics = scanner.nextInt();
@@ -38,7 +39,7 @@ public class HealthKiosk{
         double weight = scanner.nextDouble();
         System.out.print("Enter height (m): ");
         double height = scanner.nextDouble();
-        double bmi = weight / (height * height);
+        bmi = weight / (height * height);
         bmi = Math.round(bmi * 10.0) / 10.0;
         System.out.print("BMI: " + bmi + " ");
         if(bmi < 18.5){
@@ -92,5 +93,22 @@ public class HealthKiosk{
     } else {
       System.out.println("ID OK");
     }
+
+    // Task 4
+
+    Scanner new_scanner = new Scanner(System.in);
+    System.out.print("Please enter your first name: ");
+    String first_name = new_scanner.nextLine();
+    char base = Character.toUpperCase(first_name.charAt(0));
+    System.out.println("Base code = " + base);
+    char shifted = (char) ('A' + (base - 'A' + 2) % 26);
+    System.out.println("Shifted letter of base code = " + shifted);
+    String lastTwo = studentID.substring(studentID.length() - 2);
+    System.out.println("Last two characters for ID (task 3): " + lastTwo);
+    int roundedBMI = (int) Math.round(bmi);
+    System.out.println("Assuming student option was 2 in Task 2, BMI= " + bmi + " (rounded value = " + roundedBMI + ")");
+    String displayCode = shifted + lastTwo + "-" + roundedBMI;
+    System.out.println("Display Code: " + displayCode);
+
   }
 }
